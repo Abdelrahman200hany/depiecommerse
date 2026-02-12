@@ -15,22 +15,7 @@ class SwitchBottom extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(color: Colors.transparent),
-              child: Center(
-                child: Text(
-                  'List View',
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Expanded(
+            Expanded(
             child: Container(
               
               decoration: BoxDecoration(
@@ -48,6 +33,22 @@ class SwitchBottom extends StatelessWidget {
               ),
             ),
           ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(color: Colors.transparent),
+              child: Center(
+                child: Text(
+                  'Grid view',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        
         ],
       ),
     );

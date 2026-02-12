@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minecommerse/view/custom_widgets/grid_item.dart';
+import 'package:minecommerse/view/custom_widgets/models/product_item_model.dart';
 
 class GridList extends StatefulWidget {
   const GridList({super.key});
@@ -9,39 +10,13 @@ class GridList extends StatefulWidget {
 }
 
 class _GridListState extends State<GridList> {
-  List<GridItemModel> items = [
-    GridItemModel(
-      des: 'seaRach pizza ',
-      image: 'assets/images/pizza.jpeg',
-      title: 'pizza',
-    ),
-    GridItemModel(
-      des: 'white pasta',
-      image: 'assets/images/pasta.jpeg',
-      title: 'pasta',
-    ),
-    GridItemModel(
-      des: 'classic burger',
-      image: 'assets/images/burger.jpg',
-      title: 'burger',
-    ),
-    GridItemModel(
-      des: 'gril tonna',
-      image: 'assets/images/fish2.jpeg',
-      title: 'fish',
-    ),
-    GridItemModel(
-      des: 'well done ',
-      image: 'assets/images/meat.jpeg',
-      title: 'meat',
-    ),
-  ];
+   List items=ProductItemModel.items;
   @override
   Widget build(BuildContext context) {
     return SliverGrid.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 1,
+        childAspectRatio: 150/180,
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,
       ),
@@ -51,8 +26,3 @@ class _GridListState extends State<GridList> {
   }
 }
 
-class GridItemModel {
-  final String image, title, des;
-
-  GridItemModel({required this.image, required this.title, required this.des});
-}

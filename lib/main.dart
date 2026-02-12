@@ -1,18 +1,32 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:minecommerse/view/home_view.dart';
+import 'package:minecommerse/view/custom_widgets/on_generate_route.dart';
+import 'package:minecommerse/view/main_view.dart';
 
 void main() {
-  runApp(const Ecommerse());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => Ecommerse(), // Wrap your app
+    ),
+  );
 }
+
 class Ecommerse extends StatelessWidget {
   const Ecommerse({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
+    return MaterialApp(
+     
 
-      home: HomeView(),
+      builder: DevicePreview.appBuilder,
+      locale: DevicePreview.locale(context),
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: onGenerateRoute,
+
+      initialRoute: MainView.route,
     );
   }
 }
+

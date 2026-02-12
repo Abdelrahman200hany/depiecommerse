@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:minecommerse/view/custom_widgets/bottom_navigation_bar.dart';
 import 'package:minecommerse/view/custom_widgets/carousel_slider.dart';
-import 'package:minecommerse/view/custom_widgets/grid_list.dart';
+// import 'package:minecommerse/view/custom_widgets/grid_list.dart';
 import 'package:minecommerse/view/custom_widgets/search_feild.dart';
+import 'package:minecommerse/view/custom_widgets/sliver_list.dart';
 import 'package:minecommerse/view/custom_widgets/switch_bottom.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
+  static const String route = 'HomeView';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
-      bottomNavigationBar: BuildBottomNavigationBar(),
       appBar: AppBar(
         centerTitle: true,
         title: Text(
@@ -30,7 +31,6 @@ class HomeView extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: CustomScrollView(
-          
           slivers: [
             SliverToBoxAdapter(child: CustomSearchAppBar()),
             SliverToBoxAdapter(child: SizedBox(height: 16)),
@@ -52,7 +52,7 @@ class HomeView extends StatelessWidget {
             SliverToBoxAdapter(child: SizedBox(height: 16)),
             SliverToBoxAdapter(child: SwitchBottom()),
             SliverToBoxAdapter(child: SizedBox(height: 16)),
-            GridList(),
+            CustomSliverList(),
           ],
         ),
       ),

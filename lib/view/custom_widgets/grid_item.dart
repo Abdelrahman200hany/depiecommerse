@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:minecommerse/view/custom_widgets/grid_list.dart';
+import 'package:minecommerse/view/custom_widgets/models/product_item_model.dart';
 
 class GridItem extends StatelessWidget {
   const GridItem({super.key, required this.item});
-  final GridItemModel item;
+  final ProductItemModel item;
 
   @override
   Widget build(BuildContext context) {
