@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minecommerse/view/custom_widgets/grid_item.dart';
-import 'package:minecommerse/view/custom_widgets/models/product_item_model.dart';
+import 'package:minecommerse/models/product_item_model.dart';
 
 class GridList extends StatefulWidget {
   const GridList({super.key});

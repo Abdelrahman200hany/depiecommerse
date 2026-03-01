@@ -1,5 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:minecommerse/manager/bloc/cart_bloc_bloc.dart';
 import 'package:minecommerse/view/custom_widgets/on_generate_route.dart';
 import 'package:minecommerse/view/main_view.dart';
 
@@ -17,16 +19,16 @@ class Ecommerse extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-     
+    return BlocProvider(
+      create: (context) => CartBloc(),
+      child: MaterialApp(
+        builder: DevicePreview.appBuilder,
+        locale: DevicePreview.locale(context),
+        debugShowCheckedModeBanner: false,
+        onGenerateRoute: onGenerateRoute,
 
-      builder: DevicePreview.appBuilder,
-      locale: DevicePreview.locale(context),
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: onGenerateRoute,
-
-      initialRoute: MainView.route,
+        initialRoute: MainView.route,
+      ),
     );
   }
 }
-

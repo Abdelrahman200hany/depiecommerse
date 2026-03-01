@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:minecommerse/view/custom_widgets/container_details_list.dart';
 import 'package:minecommerse/view/custom_widgets/header_product_item_des.dart';
 import 'package:minecommerse/view/custom_widgets/ingredient_container.dart';
-import 'package:minecommerse/view/custom_widgets/models/product_item_model.dart';
+import 'package:minecommerse/models/product_item_model.dart';
 import 'package:minecommerse/view/custom_widgets/stack_picture.dart';
 
 class ProductItemView extends StatelessWidget {

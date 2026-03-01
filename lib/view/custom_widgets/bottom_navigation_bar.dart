@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:minecommerse/manager/bloc/cart_bloc_bloc.dart';
 
 class BuildBottomNavigationBar extends StatefulWidget {
   const BuildBottomNavigationBar({super.key, required this.onChange});
@@ -25,7 +27,13 @@ class _BuildBottomNavigationBarState extends State<BuildBottomNavigationBar> {
 
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Cart'),
+        BottomNavigationBarItem(
+          icon: Badge.count(
+            count: context.watch<CartBloc>().state.items.length,
+            child: Icon(Icons.shopping_cart),
+          ),
+          label: 'Cart',
+        ),
         BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
       ],
     );
